@@ -30,9 +30,11 @@ public class Utils {
      */
     static WebDriver initDriver() {
         final WebDriver wrappedDriver;
-        String chromeExe = Paths.get(System.getProperty("user.dir"), "webdrivers", "chromedriver-2.32-x64.exe").toString();
+        String chrome = Paths.get(System.getProperty("user.dir"), "webdrivers", "chromedriver-2.32-x64.exe").toString();
+        if (System.getProperty("os.name").toLowerCase().contains("linux"))
+            chrome = chrome.replace("chromedriver-2.32-x64.exe", "chromedriver-2.32-x86-lin");
         try {
-            System.setProperty("webdriver.chrome.driver", chromeExe);
+            System.setProperty("webdriver.chrome.driver", chrome);
             wrappedDriver = new ChromeDriver();
         } catch (Exception e) {
             Assert.fail();
