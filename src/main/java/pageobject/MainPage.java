@@ -38,7 +38,8 @@ public class MainPage {
         getElementByXpath(ENTRY, MED_WAIT).click();
         getElementByXpath(LOGIN, MED_WAIT).sendKeys(email);
         getElementByXpath(PASSWORD, MED_WAIT).sendKeys(pass);
-        Thread.sleep(1000);
+        Thread.sleep(1000); //часто по неизвестной причине - неверный логин или пароль. Похоже на дефект, лучше не костылить
+        //вариант костыля - если найден элемент с текстом неверный логин или пароль то логинится снова
         getElementByXpath(SIGNIN, MED_WAIT).click();
     }
 

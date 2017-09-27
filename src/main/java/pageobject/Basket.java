@@ -24,7 +24,7 @@ public class Basket {
     }
 
     public void removeAll() {
-        getElementByXpath(REMOVEALL, MED_WAIT);
+        getElementByXpath(REMOVEALL, MED_WAIT).click();
     }
 
     public String getBasketText() {

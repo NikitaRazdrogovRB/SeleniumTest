@@ -46,8 +46,8 @@ public class SberOzonTest extends BaseTest {
         driver.get("http://www.ozon.ru/");
         MainPage mainPage = new MainPage();
         mainPage.openPage();
-        mainPage.logIn("autotest@mail.ru", "PA1!ssword");
-        Thread.sleep(5000);
+        mainPage.logIn("autotest@mail.ru", "PA1!ssword"); // по непонятным причинам иногда пишет неверный логин или пароль. Looks like defect
+        Thread.sleep(5000);  //здесь и далее Thread.sleep в качестве костыля для стабильности теста, при локальном развертывании стенда будут не нужны
         mainPage.search("iPhone");
         Thread.sleep(5000);
         mainPage.pickGoods();
