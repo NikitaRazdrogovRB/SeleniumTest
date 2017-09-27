@@ -43,8 +43,9 @@ public class MainPage {
         getElementByXpath(SIGNIN, MED_WAIT).click();
     }
 
-    public void search(String text) {
+    public void search(String text) throws InterruptedException {
         getElementByXpath(SEARCH, MED_WAIT).sendKeys(text);
+        Thread.sleep(1000);
         getElementByXpath(STARTSEARCH, MED_WAIT).click();
     }
 
